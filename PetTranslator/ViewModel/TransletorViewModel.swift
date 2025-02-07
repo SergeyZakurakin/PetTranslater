@@ -14,7 +14,7 @@ class TranslatorViewModel: ObservableObject {
     @Published var isRecording = false
     @Published var translatedText = ""
     
-//    private let recorder = AudioRecorder()
+    private let recorder = AudioRecorder()
 
     func toggleAnimalMode() {
         isAnimalMode.toggle()
@@ -24,15 +24,15 @@ class TranslatorViewModel: ObservableObject {
         selectedAnimal = animal
     }
     
-//    func startRecording() {
-//        recorder.startRecording()
-//        isRecording = recorder.isRecording
-//    }
+    func startRecording() {
+        recorder.startRecording()
+        isRecording = recorder.isRecording
+    }
     
-//    func stopRecording() {
-//        recorder.stopRecording()
-//        isRecording = recorder.isRecording
-//    }
+    func stopRecording() {
+        recorder.stopRecording()
+        isRecording = recorder.isRecording
+    }
     
     func processTranslation() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

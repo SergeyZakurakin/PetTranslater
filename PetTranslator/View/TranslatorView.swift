@@ -33,13 +33,13 @@ struct TranslatorView: View {
                     .frame(maxWidth: .infinity)
                     
                   
-//                    HStack {
-//                        NavigationLink(destination: RecordingScreen(viewModel: viewModel)) {
-//                            Image(systemName: "mic.fill")
-//                                .resizable()
-//                                .frame(width: 80, height: 80)
-//                                .padding()
-//                        }
+                    HStack {
+                        NavigationLink(destination: RecordingView(viewModel: viewModel)) {
+                            Image(systemName: "mic.fill")
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .padding()
+                        }
                         
                         
                         VStack {
@@ -89,7 +89,7 @@ struct TranslatorView: View {
             }
         }
     }
-//}
+}
 
 #Preview {
     TranslatorView()

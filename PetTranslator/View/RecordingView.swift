@@ -30,7 +30,7 @@ struct RecordingView: View {
             }
             
             if !viewModel.isRecording {
-                NavigationLink(destination: ProcessingScreen(viewModel: viewModel)) {
+                NavigationLink(destination: ProcessingView(viewModel: viewModel)) {
                     Text("Process Recording")
                         .padding()
                         .background(Color.green)
