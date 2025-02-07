@@ -13,6 +13,7 @@ class TranslatorViewModel: ObservableObject {
     @Published var selectedAnimal = "dog"
     @Published var isRecording = false
     @Published var translatedText = ""
+    @Published var isMicrophoneGranted = false
     
     private let recorder = AudioRecorder()
 
@@ -37,6 +38,21 @@ class TranslatorViewModel: ObservableObject {
     func processTranslation() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.translatedText = self.isAnimalMode ? "Woof woof! (I'm hungry)" : "Hello! Feed me!"
+        }
+    }
+    
+    // Новый метод для запроса доступа к микрофону
+    func requestMicrophoneAccess() {
+        AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
+            DispatchQueue.main.async {
+                if granted {
+                    self?.isMicrophoneGranted = true
+                    print("Microphone access granted")
+                } else {
+                    self?.isMicrophoneGranted = false
+                    print("Microphone access denied")
+                }
+            }
         }
     }
 }

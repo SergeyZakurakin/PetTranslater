@@ -31,6 +31,7 @@
 		DCECAA262D56A4B6003F5643 /* ProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingView.swift; sourceTree = "<group>"; };
 		DCECAA282D56A55E003F5643 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		DCECAA2B2D56A5E9003F5643 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		DCECAA2E2D56A958003F5643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,7 @@
 		DCECAA152D569F8C003F5643 /* PetTranslator */ = {
 			isa = PBXGroup;
 			children = (
+				DCECAA2E2D56A958003F5643 /* Info.plist */,
 				DCECAA2A2D56A5B5003F5643 /* Model */,
 				DCECAA1F2D56A140003F5643 /* ViewModel */,
 				DCECAA1A2D56A038003F5643 /* View */,
@@ -326,6 +328,7 @@
 				DEVELOPMENT_TEAM = 77YH724CV2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PetTranslator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -360,6 +363,7 @@
 				DEVELOPMENT_TEAM = 77YH724CV2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PetTranslator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

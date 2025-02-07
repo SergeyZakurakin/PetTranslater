@@ -39,6 +39,10 @@ struct RecordingView: View {
                 }
             }
         }
+        .onAppear {
+                    // Запросить доступ к микрофону при появлении экрана
+                    viewModel.requestMicrophoneAccess()
+                }
     }
 }
 
