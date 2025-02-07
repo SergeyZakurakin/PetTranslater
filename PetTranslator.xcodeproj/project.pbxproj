@@ -16,6 +16,7 @@
 		DCECAA252D56A40B003F5643 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA242D56A40B003F5643 /* RecordingView.swift */; };
 		DCECAA272D56A4B6003F5643 /* ProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA262D56A4B6003F5643 /* ProcessingView.swift */; };
 		DCECAA292D56A55E003F5643 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA282D56A55E003F5643 /* ResultView.swift */; };
+		DCECAA2C2D56A5E9003F5643 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA2B2D56A5E9003F5643 /* AudioRecorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		DCECAA242D56A40B003F5643 /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
 		DCECAA262D56A4B6003F5643 /* ProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingView.swift; sourceTree = "<group>"; };
 		DCECAA282D56A55E003F5643 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		DCECAA2B2D56A5E9003F5643 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		DCECAA152D569F8C003F5643 /* PetTranslator */ = {
 			isa = PBXGroup;
 			children = (
+				DCECAA2A2D56A5B5003F5643 /* Model */,
 				DCECAA1F2D56A140003F5643 /* ViewModel */,
 				DCECAA1A2D56A038003F5643 /* View */,
 				DCECAA112D569F8C003F5643 /* Preview Content */,
@@ -96,6 +99,14 @@
 				DCECAA202D56A16F003F5643 /* TransletorViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DCECAA2A2D56A5B5003F5643 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DCECAA2B2D56A5E9003F5643 /* AudioRecorder.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 				DCECAA1E2D56A05E003F5643 /* TranslatorView.swift in Sources */,
 				DCECAA212D56A16F003F5643 /* TransletorViewModel.swift in Sources */,
 				DCECAA292D56A55E003F5643 /* ResultView.swift in Sources */,
+				DCECAA2C2D56A5E9003F5643 /* AudioRecorder.swift in Sources */,
 				DCECAA192D569F8C003F5643 /* PetTranslatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
