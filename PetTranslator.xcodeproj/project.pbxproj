@@ -11,6 +11,8 @@
 		DCECAA172D569F8C003F5643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCECAA122D569F8C003F5643 /* Assets.xcassets */; };
 		DCECAA182D569F8C003F5643 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA132D569F8C003F5643 /* ContentView.swift */; };
 		DCECAA192D569F8C003F5643 /* PetTranslatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA142D569F8C003F5643 /* PetTranslatorApp.swift */; };
+		DCECAA1E2D56A05E003F5643 /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA1D2D56A05E003F5643 /* TranslatorView.swift */; };
+		DCECAA212D56A16F003F5643 /* TransletorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA202D56A16F003F5643 /* TransletorViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		DCECAA122D569F8C003F5643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCECAA132D569F8C003F5643 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DCECAA142D569F8C003F5643 /* PetTranslatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTranslatorApp.swift; sourceTree = "<group>"; };
+		DCECAA1D2D56A05E003F5643 /* TranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorView.swift; sourceTree = "<group>"; };
+		DCECAA202D56A16F003F5643 /* TransletorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransletorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +63,30 @@
 		DCECAA152D569F8C003F5643 /* PetTranslator */ = {
 			isa = PBXGroup;
 			children = (
+				DCECAA1F2D56A140003F5643 /* ViewModel */,
+				DCECAA1A2D56A038003F5643 /* View */,
 				DCECAA112D569F8C003F5643 /* Preview Content */,
 				DCECAA122D569F8C003F5643 /* Assets.xcassets */,
 				DCECAA132D569F8C003F5643 /* ContentView.swift */,
 				DCECAA142D569F8C003F5643 /* PetTranslatorApp.swift */,
 			);
 			path = PetTranslator;
+			sourceTree = "<group>";
+		};
+		DCECAA1A2D56A038003F5643 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DCECAA1D2D56A05E003F5643 /* TranslatorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DCECAA1F2D56A140003F5643 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DCECAA202D56A16F003F5643 /* TransletorViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +163,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCECAA182D569F8C003F5643 /* ContentView.swift in Sources */,
+				DCECAA1E2D56A05E003F5643 /* TranslatorView.swift in Sources */,
+				DCECAA212D56A16F003F5643 /* TransletorViewModel.swift in Sources */,
 				DCECAA192D569F8C003F5643 /* PetTranslatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
