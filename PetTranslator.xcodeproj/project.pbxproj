@@ -14,6 +14,7 @@
 		DCECAA1E2D56A05E003F5643 /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA1D2D56A05E003F5643 /* TranslatorView.swift */; };
 		DCECAA212D56A16F003F5643 /* TransletorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA202D56A16F003F5643 /* TransletorViewModel.swift */; };
 		DCECAA252D56A40B003F5643 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA242D56A40B003F5643 /* RecordingView.swift */; };
+		DCECAA272D56A4B6003F5643 /* ProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA262D56A4B6003F5643 /* ProcessingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		DCECAA1D2D56A05E003F5643 /* TranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorView.swift; sourceTree = "<group>"; };
 		DCECAA202D56A16F003F5643 /* TransletorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransletorViewModel.swift; sourceTree = "<group>"; };
 		DCECAA242D56A40B003F5643 /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
+		DCECAA262D56A4B6003F5643 /* ProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				DCECAA1D2D56A05E003F5643 /* TranslatorView.swift */,
 				DCECAA242D56A40B003F5643 /* RecordingView.swift */,
+				DCECAA262D56A4B6003F5643 /* ProcessingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCECAA182D569F8C003F5643 /* ContentView.swift in Sources */,
+				DCECAA272D56A4B6003F5643 /* ProcessingView.swift in Sources */,
 				DCECAA252D56A40B003F5643 /* RecordingView.swift in Sources */,
 				DCECAA1E2D56A05E003F5643 /* TranslatorView.swift in Sources */,
 				DCECAA212D56A16F003F5643 /* TransletorViewModel.swift in Sources */,
