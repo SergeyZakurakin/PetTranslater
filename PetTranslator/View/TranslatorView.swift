@@ -14,22 +14,22 @@ struct TranslatorView: View {
         
         
         ZStack {
-            
             NavigationView {
                 VStack {
                     Text("Translator")
-                        .font(.largeTitle)
+                        .font(.custom("konkhmer-sleokchher", size: 32))
                         .fontWeight(.bold)
                         .padding()
                     
                     // Переключатель "Человек / Животное"
                     
-                    HStack {
+                    HStack(spacing: 30) {
                         Text("HUMAN")
-                        Text("&&")
+                        Image(.arrow)
+                            .frame(width: 24, height: 24)
                         Text("PET")
                     }
-                    .font(.system(size: 16))
+                    .font(.custom("konkhmer-sleokchher", size: 16))
                     .frame(maxWidth: .infinity)
                     
                     
@@ -37,43 +37,41 @@ struct TranslatorView: View {
                         NavigationLink(destination: RecordingView(viewModel: viewModel)) {
                             
                             ZStack {
-                                RoundedRectangle(cornerRadius: 20)
+                                RoundedRectangle(cornerRadius: 16)
                                     .fill(Color.white)
                                     .frame(width: 178, height: 176)
                                     .shadow(color: .gray.opacity(0.8), radius: 5, x: 0, y: 5)
                                 VStack {
-                                    Image("microphone-2")
+                                    Image(.microphone2)
                                         .resizable()
                                         .frame(width: 70, height: 70)
                                         .padding()
                                     Text("Start to speak")
                                         .foregroundStyle(.black)
-                                        .fontWeight(.bold)
+                                        .font(.custom("konkhmer-sleokchher", size: 16))
                                 }
                             }
                         }
                         
-                        
                         ZStack {
-                            RoundedRectangle(cornerRadius: 20)
+                            RoundedRectangle(cornerRadius: 16)
                                 .fill(Color.white)
                                 .frame(width: 107, height: 176)
                                 .shadow(color: .gray.opacity(0.8), radius: 5, x: 0, y: 5)
                             VStack {
                                 Button(action: { viewModel.selectAnimal("dog") }) {
-                                    Image("Pet1")
+                                    Image(.pet1)
                                         .resizable()
                                         .frame(width: 83, height: 70)
                                         .opacity(viewModel.selectedAnimal == "dog" ? 1.0 : 0.5)
                                 }
                                 
                                 Button(action: { viewModel.selectAnimal("cat") }) {
-                                    Image("Pet2")
+                                    Image(.pet2)
                                         .resizable()
                                         .frame(width: 83, height: 70)
                                         .opacity(viewModel.selectedAnimal == "cat" ? 1.0 : 0.5)
                                 }
-
                             }
                         }
                     }

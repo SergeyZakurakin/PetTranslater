@@ -17,6 +17,7 @@
 		DCECAA272D56A4B6003F5643 /* ProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA262D56A4B6003F5643 /* ProcessingView.swift */; };
 		DCECAA292D56A55E003F5643 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA282D56A55E003F5643 /* ResultView.swift */; };
 		DCECAA2C2D56A5E9003F5643 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA2B2D56A5E9003F5643 /* AudioRecorder.swift */; };
+		DCECAA312D56E728003F5643 /* konkhmer-sleokchher.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCECAA302D56E728003F5643 /* konkhmer-sleokchher.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DCECAA282D56A55E003F5643 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		DCECAA2B2D56A5E9003F5643 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		DCECAA2E2D56A958003F5643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DCECAA302D56E728003F5643 /* konkhmer-sleokchher.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "konkhmer-sleokchher.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		DCECAA152D569F8C003F5643 /* PetTranslator */ = {
 			isa = PBXGroup;
 			children = (
+				DCECAA2F2D56E656003F5643 /* font */,
 				DCECAA2E2D56A958003F5643 /* Info.plist */,
 				DCECAA2A2D56A5B5003F5643 /* Model */,
 				DCECAA1F2D56A140003F5643 /* ViewModel */,
@@ -109,6 +112,14 @@
 				DCECAA2B2D56A5E9003F5643 /* AudioRecorder.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DCECAA2F2D56E656003F5643 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				DCECAA302D56E728003F5643 /* konkhmer-sleokchher.ttf */,
+			);
+			path = font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCECAA162D569F8C003F5643 /* Preview Assets.xcassets in Resources */,
+				DCECAA312D56E728003F5643 /* konkhmer-sleokchher.ttf in Resources */,
 				DCECAA172D569F8C003F5643 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
