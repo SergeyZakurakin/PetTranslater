@@ -9,40 +9,45 @@ import SwiftUI
 
 struct RecordingView: View {
     @ObservedObject var viewModel: TranslatorViewModel
-
+    
     var body: some View {
-        VStack {
-            Text("Recording...")
-                .font(.title)
-                .padding()
-            
-            Button(action: {
-                if viewModel.isRecording {
-                    viewModel.stopRecording()
-                } else {
-                    viewModel.startRecording()
-                }
-            }) {
-                Image(systemName: viewModel.isRecording ? "stop.circle.fill" : "mic.fill")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .padding()
-            }
-            
-            if !viewModel.isRecording {
-                NavigationLink(destination: ProcessingView(viewModel: viewModel)) {
-                    Text("Process Recording")
+        ZStack {
+            GradientBackground()
+                VStack {
+                    Text("Recording...")
+                        .font(.title)
                         .padding()
-                        .background(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                    
+                    Button(action: {
+                        if viewModel.isRecording {
+                            viewModel.stopRecording()
+                        } else {
+                            viewModel.startRecording()
+                        }
+                    }) {
+                        Image(systemName: viewModel.isRecording ? "stop.circle.fill" : "mic.fill")
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                            .padding()
+                    }
+                    
+                    if !viewModel.isRecording {
+                        NavigationLink(destination: ProcessingView(viewModel: viewModel)) {
+                            Text("Process Recording")
+                                .padding()
+                                .background(Color.green)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
+                    }
                 }
-            }
-        }
-        .onAppear {
+                
+                .onAppear {
                     // Запросить доступ к микрофону при появлении экрана
                     viewModel.requestMicrophoneAccess()
                 }
+            }
+//        .gradientBackground().ignoresSafeArea()
+            
     }
 }
-

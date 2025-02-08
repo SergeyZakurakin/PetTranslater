@@ -11,10 +11,7 @@ struct TranslatorView: View {
     @StateObject var viewModel = TranslatorViewModel()
     
     var body: some View {
-        
-        
-        ZStack {
-            NavigationView {
+            NavigationStack {
                 VStack {
                     Text("Translator")
                         .font(.custom("konkhmer-sleokchher", size: 32))
@@ -89,20 +86,11 @@ struct TranslatorView: View {
                     
                     Spacer()
                 }
-                .background(
-                    LinearGradient(
-                        gradient: Gradient(colors: [
-                            Color(red: 201/255, green: 255/255, blue: 224/255),
-                            Color(red: 243/255, green: 245/255, blue: 246/255)
-                        ]),
-                        startPoint: .bottom,
-                        endPoint: .top
-                    )
-                    
-                    .ignoresSafeArea()
-                )
+                .background(GradientBackground())
             }
-        }
+           
+            
+        
     }
 }
 

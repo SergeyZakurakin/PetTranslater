@@ -18,6 +18,7 @@
 		DCECAA292D56A55E003F5643 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA282D56A55E003F5643 /* ResultView.swift */; };
 		DCECAA2C2D56A5E9003F5643 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA2B2D56A5E9003F5643 /* AudioRecorder.swift */; };
 		DCECAA312D56E728003F5643 /* konkhmer-sleokchher.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCECAA302D56E728003F5643 /* konkhmer-sleokchher.ttf */; };
+		DCECAA342D56FC90003F5643 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA332D56FC90003F5643 /* Color+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DCECAA2B2D56A5E9003F5643 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		DCECAA2E2D56A958003F5643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DCECAA302D56E728003F5643 /* konkhmer-sleokchher.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "konkhmer-sleokchher.ttf"; sourceTree = "<group>"; };
+		DCECAA332D56FC90003F5643 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		DCECAA152D569F8C003F5643 /* PetTranslator */ = {
 			isa = PBXGroup;
 			children = (
+				DCECAA322D56FC56003F5643 /* Extensions */,
 				DCECAA2F2D56E656003F5643 /* font */,
 				DCECAA2E2D56A958003F5643 /* Info.plist */,
 				DCECAA2A2D56A5B5003F5643 /* Model */,
@@ -120,6 +123,14 @@
 				DCECAA302D56E728003F5643 /* konkhmer-sleokchher.ttf */,
 			);
 			path = font;
+			sourceTree = "<group>";
+		};
+		DCECAA322D56FC56003F5643 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DCECAA332D56FC90003F5643 /* Color+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +209,7 @@
 			files = (
 				DCECAA182D569F8C003F5643 /* ContentView.swift in Sources */,
 				DCECAA272D56A4B6003F5643 /* ProcessingView.swift in Sources */,
+				DCECAA342D56FC90003F5643 /* Color+Extensions.swift in Sources */,
 				DCECAA252D56A40B003F5643 /* RecordingView.swift in Sources */,
 				DCECAA1E2D56A05E003F5643 /* TranslatorView.swift in Sources */,
 				DCECAA212D56A16F003F5643 /* TransletorViewModel.swift in Sources */,
