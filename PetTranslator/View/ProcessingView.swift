@@ -40,3 +40,6 @@ struct ProcessingView: View {
     }
 }
 
+#Preview {
+    ProcessingView(viewModel: TranslatorViewModel())
+}

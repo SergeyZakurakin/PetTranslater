@@ -14,6 +14,7 @@ class TranslatorViewModel: ObservableObject {
     @Published var isRecording = false
     @Published var translatedText = ""
     @Published var isMicrophoneGranted = false
+    @Published var shouldNavigateToProcessing = false
     
     private let recorder = AudioRecorder()
 
@@ -42,17 +43,17 @@ class TranslatorViewModel: ObservableObject {
     }
     
     // Новый метод для запроса доступа к микрофону
-    func requestMicrophoneAccess() {
+    func requestMicrophoneAccess(completion: @escaping (Bool) -> Void) {
         AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
             DispatchQueue.main.async {
-                if granted {
-                    self?.isMicrophoneGranted = true
-                    print("Microphone access granted")
-                } else {
-                    self?.isMicrophoneGranted = false
-                    print("Microphone access denied")
-                }
+                self?.isMicrophoneGranted = granted
+                print(granted ? "Microphone access granted" : "Microphone access denied")
+                completion(granted)
             }
         }
+    
+    }
+    func navigateToProcessingView() {
+        shouldNavigateToProcessing = true
     }
 }

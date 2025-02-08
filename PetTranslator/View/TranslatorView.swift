@@ -81,16 +81,10 @@ struct TranslatorView: View {
                         .padding()
                         .padding(.top, 51)
                     
-                    // Кнопка "Микрофон"
-                    
-                    
                     Spacer()
                 }
                 .background(GradientBackground())
             }
-           
-            
-        
     }
 }
 
