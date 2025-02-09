@@ -18,8 +18,22 @@ class ProcessingViewModel: ObservableObject {
     
     private var recorder: AVAudioRecorder?
     
-    let dogPhrases = ["Woof! Woof!", "Bark! Bark!", "Arf! Arf!"]
-    let catPhrases = ["Meow! Meow!", "Purr... Purr...", "Hiss! Hiss!"]
+    
+    let dogPhrases = [
+        "I'm hungry, feed me!",
+        "Let's go for a walk!",
+        "Did you bring me a treat?",
+        "Stop working, pet me!",
+        "Throw the ball, human!"
+    ]
+    
+    let catPhrases = [
+           "What are you doing, human?",
+           "I demand more food!",
+           "Leave me alone, I’m sleeping.",
+           "Stop touching me!",
+           "Pet me… but only for 5 seconds."
+       ]
     
     func startRecording() {
         let audioSession = AVAudioSession.sharedInstance()
@@ -49,20 +63,23 @@ class ProcessingViewModel: ObservableObject {
         isRecording = false
         
         // проверка работает ли запись
-        if let recordedURL = recorder?.url {
-            print("Запись сохранена по пути: \(recordedURL)")
-        } else {
-            print("Ошибка: Файл записи не создан.")
+        DispatchQueue.main.async {
+            if let recordedURL = self.recorder?.url {
+                print("Запись сохранена по пути: \(recordedURL)")
+            } else {
+                print("Ошибка: Файл записи не создан.")
+            }
+            
+            // Генерация случайной фразы
+            if animal == "dog" {
+                self.randomPhrase = self.dogPhrases.randomElement() ?? "Woof!"
+            } else if animal == "cat" {
+                self.randomPhrase = self.catPhrases.randomElement() ?? "Meow!"
+            }
+            
+            self.objectWillChange.send() // Уведомляем SwiftUI об изменении
+            print("Сгенерированная фраза: \(self.randomPhrase)")
         }
-        
-        // Генерация случайной фразы
-        if animal == "dog" {
-            randomPhrase = dogPhrases.randomElement() ?? "Woof!"
-        } else if animal == "cat" {
-            randomPhrase = catPhrases.randomElement() ?? "Meow!"
-        }
-        
-        recordedAudioURL = recorder?.url
     }
     
     func getDocumentsDirectory() -> URL {

@@ -43,7 +43,7 @@ struct ProcessingView: View {
                                 LinearGradient(gradient: Gradient(colors: [.blue, .blue]), startPoint: .leading, endPoint: .trailing)
                                     .frame(width: viewModel.fillWidth, height: 70)
                                     .cornerRadius(16) // Маска для округлых краев
-                                    .animation(.easeInOut(duration: 4), value: viewModel.fillWidth) // Анимация
+                                    .animation(.easeInOut(duration: 3), value: viewModel.fillWidth) // Анимация
                                     .mask(
                                         Image(.wave)
                                             .resizable()
@@ -94,7 +94,7 @@ struct ProcessingView: View {
                 }
                 
                 if !viewModel.isProcessing {
-                    NavigationLink(destination: ResultView(viewModel: TranslatorViewModel())) {
+                    NavigationLink(destination: ResultView(viewModel: ResultViewModel(), selectedAnimal: selectedAnimal)) {
                         HStack {
                             Image(systemName: "checkmark.circle.fill") // Замените на вашу иконку
                                 .foregroundColor(.green)
@@ -123,7 +123,7 @@ struct ProcessingView: View {
                     }
                 }
                 if !viewModel.isProcessing && viewModel.recordedAudioURL != nil {
-                    NavigationLink(destination: ResultView(viewModel: TranslatorViewModel()))  {
+                    NavigationLink(destination: ResultView(viewModel: ResultViewModel(), selectedAnimal: selectedAnimal))  {
                         HStack {
                             Image(systemName: "checkmark.circle.fill")
                                 .foregroundColor(.green)

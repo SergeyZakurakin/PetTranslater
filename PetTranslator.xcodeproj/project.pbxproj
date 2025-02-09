@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC0B80A52D591E3000459C7E /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80A42D591E3000459C7E /* ResultViewModel.swift */; };
+		DC0B80A72D5938FE00459C7E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80A62D5938FE00459C7E /* SettingsView.swift */; };
 		DCBFC4992D581ECB00C73B73 /* ProcessingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBFC4982D581ECB00C73B73 /* ProcessingViewModel.swift */; };
 		DCECAA162D569F8C003F5643 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCECAA102D569F8C003F5643 /* Preview Assets.xcassets */; };
 		DCECAA172D569F8C003F5643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCECAA122D569F8C003F5643 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC0B80A42D591E3000459C7E /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		DC0B80A62D5938FE00459C7E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DCBFC4982D581ECB00C73B73 /* ProcessingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingViewModel.swift; sourceTree = "<group>"; };
 		DCECA9FF2D569EED003F5643 /* PetTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCECAA102D569F8C003F5643 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				DCECAA242D56A40B003F5643 /* RecordingView.swift */,
 				DCECAA262D56A4B6003F5643 /* ProcessingView.swift */,
 				DCECAA282D56A55E003F5643 /* ResultView.swift */,
+				DC0B80A62D5938FE00459C7E /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 			children = (
 				DCECAA202D56A16F003F5643 /* TransletorViewModel.swift */,
 				DCBFC4982D581ECB00C73B73 /* ProcessingViewModel.swift */,
+				DC0B80A42D591E3000459C7E /* ResultViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -213,11 +219,13 @@
 				DCECAA182D569F8C003F5643 /* ContentView.swift in Sources */,
 				DCECAA272D56A4B6003F5643 /* ProcessingView.swift in Sources */,
 				DCECAA342D56FC90003F5643 /* Color+Extensions.swift in Sources */,
+				DC0B80A52D591E3000459C7E /* ResultViewModel.swift in Sources */,
 				DCECAA252D56A40B003F5643 /* RecordingView.swift in Sources */,
 				DCECAA1E2D56A05E003F5643 /* TranslatorView.swift in Sources */,
 				DCBFC4992D581ECB00C73B73 /* ProcessingViewModel.swift in Sources */,
 				DCECAA212D56A16F003F5643 /* TransletorViewModel.swift in Sources */,
 				DCECAA292D56A55E003F5643 /* ResultView.swift in Sources */,
+				DC0B80A72D5938FE00459C7E /* SettingsView.swift in Sources */,
 				DCECAA2C2D56A5E9003F5643 /* AudioRecorder.swift in Sources */,
 				DCECAA192D569F8C003F5643 /* PetTranslatorApp.swift in Sources */,
 			);
