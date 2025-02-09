@@ -15,6 +15,7 @@ struct TranslatorView: View {
                 VStack {
                     Text("Translator")
                         .font(.custom("konkhmer-sleokchher", size: 32))
+                        .foregroundStyle(.black)
                         .fontWeight(.bold)
                         .padding()
                     
@@ -27,6 +28,7 @@ struct TranslatorView: View {
                         Text("PET")
                     }
                     .font(.custom("konkhmer-sleokchher", size: 16))
+                    .foregroundStyle(.black)
                     .frame(maxWidth: .infinity)
                     
                     

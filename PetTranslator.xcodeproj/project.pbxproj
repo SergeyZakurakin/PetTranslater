@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DCBFC4992D581ECB00C73B73 /* ProcessingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBFC4982D581ECB00C73B73 /* ProcessingViewModel.swift */; };
 		DCECAA162D569F8C003F5643 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCECAA102D569F8C003F5643 /* Preview Assets.xcassets */; };
 		DCECAA172D569F8C003F5643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCECAA122D569F8C003F5643 /* Assets.xcassets */; };
 		DCECAA182D569F8C003F5643 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECAA132D569F8C003F5643 /* ContentView.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DCBFC4982D581ECB00C73B73 /* ProcessingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingViewModel.swift; sourceTree = "<group>"; };
 		DCECA9FF2D569EED003F5643 /* PetTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCECAA102D569F8C003F5643 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DCECAA122D569F8C003F5643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				DCECAA202D56A16F003F5643 /* TransletorViewModel.swift */,
+				DCBFC4982D581ECB00C73B73 /* ProcessingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				DCECAA342D56FC90003F5643 /* Color+Extensions.swift in Sources */,
 				DCECAA252D56A40B003F5643 /* RecordingView.swift in Sources */,
 				DCECAA1E2D56A05E003F5643 /* TranslatorView.swift in Sources */,
+				DCBFC4992D581ECB00C73B73 /* ProcessingViewModel.swift in Sources */,
 				DCECAA212D56A16F003F5643 /* TransletorViewModel.swift in Sources */,
 				DCECAA292D56A55E003F5643 /* ResultView.swift in Sources */,
 				DCECAA2C2D56A5E9003F5643 /* AudioRecorder.swift in Sources */,

@@ -23,7 +23,7 @@ struct RecordingView: View {
                        checkMicrophoneAccess()
                    }
                    .navigationDestination(isPresented: $viewModel.shouldNavigateToProcessing) {
-                       ProcessingView(viewModel: viewModel)
+                       ProcessingView(viewModel: ProcessingViewModel())
                    }
                }
            }

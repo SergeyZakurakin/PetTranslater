@@ -30,3 +30,7 @@ struct ResultView: View {
         }
     }
 }
+
+#Preview {
+    ResultView(viewModel: TranslatorViewModel())
+}
