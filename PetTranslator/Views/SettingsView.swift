@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    let settingsOptions = [
+            "Rate Us", "Share App", "Contact Us", "Restore Purchases",
+            "Privacy Policy", "Terms of Use"
+        ]
+    
     var body: some View {
         ZStack {
             GradientBackground()
@@ -15,12 +21,11 @@ struct SettingsView: View {
                 Text("Settings")
                     .font(.system(size: 30, weight: .bold, design: .default))
                 Spacer()
-                ForEach(0..<7) { _ in
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(height: 50)
+                ForEach(settingsOptions, id: \.self) { option in
+                    SettingsRowView(title: option) {
+                        // tap
+                    }
                 }
-                .foregroundStyle(Color(red: 214/255, green: 220/255, blue: 255/255, opacity: 1))
-                .padding(.horizontal, 30)
                 Spacer()
             }
         }

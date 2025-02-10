@@ -21,22 +21,8 @@ struct TranslatorView: View {
                 
                 // Основной контент
                 VStack {
-                    Text("Translator")
-                        .font(.custom("konkhmer-sleokchher", size: 32))
-                        .foregroundStyle(.black)
-                        .fontWeight(.bold)
-                        .padding()
-                    
-                    // Переключатель "Человек / Животное"
-                    HStack(spacing: 30) {
-                        Text("PET")
-                        Image(.arrow)
-                            .frame(width: 24, height: 24)
-                        Text("HUMAN")
-                    }
-                    .font(.custom("konkhmer-sleokchher", size: 16))
-                    .foregroundStyle(.black)
-                    .frame(maxWidth: .infinity)
+                    TranslatorTitleView()
+                    ModeSwitchView()
                     
                     // Кнопки записи и выбора животного
                     HStack {
@@ -59,25 +45,7 @@ struct TranslatorView: View {
                         }
                         
                         ZStack {
-                            RoundedRectangle(cornerRadius: 16)
-                                .fill(Color.white)
-                                .frame(width: 107, height: 176)
-                                .shadow(color: .gray.opacity(0.8), radius: 5, x: 0, y: 5)
-                            VStack {
-                                Button(action: { viewModel.selectAnimal("dog") }) {
-                                    Image(.pet1)
-                                        .resizable()
-                                        .frame(width: 83, height: 70)
-                                        .opacity(viewModel.selectedAnimal == "dog" ? 1.0 : 0.5)
-                                }
-                                
-                                Button(action: { viewModel.selectAnimal("cat") }) {
-                                    Image(.pet2)
-                                        .resizable()
-                                        .frame(width: 83, height: 70)
-                                        .opacity(viewModel.selectedAnimal == "cat" ? 1.0 : 0.5)
-                                }
-                            }
+                            AnimalSelectionView(selectedAnimal: $viewModel.selectedAnimal)
                         }
                     }
                     .padding(.top, 58)
@@ -102,13 +70,13 @@ struct TranslatorView: View {
             }
             .navigationBarHidden(true) // Скрываем навигационную панель
             .background(
-                           // Скрытый NavigationLink для перехода на SettingsView
-                           NavigationLink(
-                               destination: SettingsView(),
-                               isActive: $isSettingsActive,
-                               label: { EmptyView() }
-                           )
-                       )
+                // Скрытый NavigationLink для перехода на SettingsView
+                NavigationLink(
+                    destination: SettingsView(),
+                    isActive: $isSettingsActive,
+                    label: { EmptyView() }
+                )
+            )
         }
     }
 }

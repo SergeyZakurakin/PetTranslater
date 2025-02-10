@@ -5,6 +5,13 @@
 //  Created by Sergey Zakurakin on 2/7/25.
 //
 
+//
+//  ResultView.swift
+//  PetTranslator
+//
+//  Created by Sergey Zakurakin on 2/7/25.
+//
+
 import SwiftUI
 
 struct ResultView: View {
@@ -21,7 +28,7 @@ struct ResultView: View {
                 HStack {
                     // Кнопка закрытия
                     Button(action: {
-                        dismiss()
+                        navigateToTranslatorView()
                     }) {
                         ZStack {
                             Circle()
@@ -83,6 +90,13 @@ struct ResultView: View {
         .onAppear {
             viewModel.generateRandomPhrase(for: selectedAnimal)
             print("ResultView: \(viewModel.randomPhrase)")
+        }
+    }
+    
+    private func navigateToTranslatorView() {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UIHostingController(rootView: TranslatorView())
+            window.makeKeyAndVisible()
         }
     }
 }

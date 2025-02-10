@@ -10,7 +10,7 @@ import SwiftUI
 struct ProcessingView: View {
     @ObservedObject var viewModel: ProcessingViewModel
     @State private var selectedAnimal: String = "dog"
-    @State private var selectedTab: Int = 0 // Состояние для таббара
+    @State private var selectedTab: Int = 0
     @State private var shouldNavigateToResult = false
     @State private var isSettingsActive: Bool = false
     
@@ -23,24 +23,9 @@ struct ProcessingView: View {
                 
                 // Основной контент
                 VStack {
-                    Text("Translator")
-                        .font(.custom("konkhmer-sleokchher", size: 32))
-                        .foregroundStyle(.black)
-                        .fontWeight(.bold)
-                        .padding()
+                    TranslatorTitleView()
+                    ModeSwitchView()
                     
-                    // Переключатель "Человек / Животное"
-                    HStack(spacing: 30) {
-                        Text("PET")
-                        Image(.arrow) // Замените на вашу иконку стрелки
-                            .frame(width: 24, height: 24)
-                        Text("HUMAN")
-                    }
-                    .font(.custom("konkhmer-sleokchher", size: 16))
-                    .foregroundStyle(.black)
-                    .frame(maxWidth: .infinity)
-                    
-                    // Секция для кнопки записи
                     HStack {
                         ZStack {
                             RoundedRectangle(cornerRadius: 16)
@@ -51,13 +36,13 @@ struct ProcessingView: View {
                                 ZStack {
                                     LinearGradient(gradient: Gradient(colors: [.blue, .blue]), startPoint: .leading, endPoint: .trailing)
                                         .frame(width: viewModel.fillWidth, height: 70)
-                                        .cornerRadius(16) // Маска для округлых краев
-                                        .animation(.easeInOut(duration: 3), value: viewModel.fillWidth) // Анимация
+                                        .cornerRadius(16)
+                                        .animation(.easeInOut(duration: 3), value: viewModel.fillWidth)
                                         .mask(
                                             Image(.wave)
                                                 .resizable()
                                                 .frame(width: 163, height: 100)
-                                        ) // Маска с иконкой волны
+                                        )
                                 }
                             }
                         }
@@ -106,13 +91,13 @@ struct ProcessingView: View {
                 
                 // Кастомный таббар
                 VStack {
-                    Spacer() // Размещаем таббар внизу
+                    Spacer()
                     CustomTabBar(selectedTab: $selectedTab, isSettingsActive: $isSettingsActive)
-                        .padding(.horizontal, 40) // Отступы по бокам
-                        .padding(.bottom, 20) // Отступ снизу
+                        .padding(.horizontal, 40)
+                        .padding(.bottom, 20)
                 }
             }
-            .navigationBarHidden(true) // Скрываем навигационную панель
+            .navigationBarHidden(true)
             .background(
                 // Скрытый NavigationLink для автоматического перехода
                 NavigationLink(
@@ -125,8 +110,12 @@ struct ProcessingView: View {
         .onAppear {
             viewModel.startProcessingAnimation()
             
+            // Начинаем запись через 4 секунды
+            viewModel.startRecording()
+            
             // Автоматический переход через 4 секунды
             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                viewModel.stopRecording()
                 shouldNavigateToResult = true
             }
         }

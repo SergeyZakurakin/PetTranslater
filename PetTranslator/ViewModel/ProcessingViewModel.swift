@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFoundation
 
-class ProcessingViewModel: ObservableObject {
+final class ProcessingViewModel: ObservableObject {
     @Published var isProcessing = true
     @Published var fillWidth: CGFloat = 0
     @Published var isRecording = false
@@ -17,23 +17,6 @@ class ProcessingViewModel: ObservableObject {
     @Published var selectedAnimal: String = "dog"
     
     private var recorder: AVAudioRecorder?
-    
-    
-    let dogPhrases = [
-        "I'm hungry, feed me!",
-        "Let's go for a walk!",
-        "Did you bring me a treat?",
-        "Stop working, pet me!",
-        "Throw the ball, human!"
-    ]
-    
-    let catPhrases = [
-           "What are you doing, human?",
-           "I demand more food!",
-           "Leave me alone, I’m sleeping.",
-           "Stop touching me!",
-           "Pet me… but only for 5 seconds."
-       ]
     
     func startRecording() {
         let audioSession = AVAudioSession.sharedInstance()
@@ -54,31 +37,23 @@ class ProcessingViewModel: ObservableObject {
             recorder?.record()
             isRecording = true
         } catch {
-            print("Recording failed: \(error)")
+            print("Ошибка при записи: \(error)")
         }
     }
     
-    func stopRecording(animal: String) {
+    func stopRecording() {
         recorder?.stop()
         isRecording = false
         
-        // проверка работает ли запись
+        // Проверка, сохранён ли файл
         DispatchQueue.main.async {
             if let recordedURL = self.recorder?.url {
                 print("Запись сохранена по пути: \(recordedURL)")
             } else {
-                print("Ошибка: Файл записи не создан.")
+                print("Ошибка: Файл записи не был создан.")
             }
             
-            // Генерация случайной фразы
-            if animal == "dog" {
-                self.randomPhrase = self.dogPhrases.randomElement() ?? "Woof!"
-            } else if animal == "cat" {
-                self.randomPhrase = self.catPhrases.randomElement() ?? "Meow!"
-            }
-            
-            self.objectWillChange.send() // Уведомляем SwiftUI об изменении
-            print("Сгенерированная фраза: \(self.randomPhrase)")
+            self.objectWillChange.send()
         }
     }
     
@@ -91,7 +66,7 @@ class ProcessingViewModel: ObservableObject {
     func startProcessingAnimation() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             withAnimation {
-                self.fillWidth = 163 // Максимальная ширина для заливки
+                self.fillWidth = 163
             }
         }
         

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class ResultViewModel: ObservableObject {
+final class ResultViewModel: ObservableObject {
     @Published var randomPhrase: String = ""
     
     private let dogPhrases = [

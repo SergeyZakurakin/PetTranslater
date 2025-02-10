@@ -10,6 +10,10 @@
 		DC0B80A52D591E3000459C7E /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80A42D591E3000459C7E /* ResultViewModel.swift */; };
 		DC0B80A72D5938FE00459C7E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80A62D5938FE00459C7E /* SettingsView.swift */; };
 		DC0B80A92D593ED200459C7E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80A82D593ED200459C7E /* CustomTabBar.swift */; };
+		DC0B80AC2D59965500459C7E /* TranslatorTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80AB2D59965500459C7E /* TranslatorTitleView.swift */; };
+		DC0B80AE2D59974200459C7E /* ModeSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80AD2D59974200459C7E /* ModeSwitchView.swift */; };
+		DC0B80B02D5997F400459C7E /* AnimalSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80AF2D5997F400459C7E /* AnimalSelectionView.swift */; };
+		DC0B80B22D59A31A00459C7E /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80B12D59A31A00459C7E /* SettingsRowView.swift */; };
 		DCBFC4992D581ECB00C73B73 /* ProcessingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBFC4982D581ECB00C73B73 /* ProcessingViewModel.swift */; };
 		DCECAA162D569F8C003F5643 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCECAA102D569F8C003F5643 /* Preview Assets.xcassets */; };
 		DCECAA172D569F8C003F5643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCECAA122D569F8C003F5643 /* Assets.xcassets */; };
@@ -29,6 +33,10 @@
 		DC0B80A42D591E3000459C7E /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		DC0B80A62D5938FE00459C7E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DC0B80A82D593ED200459C7E /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		DC0B80AB2D59965500459C7E /* TranslatorTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorTitleView.swift; sourceTree = "<group>"; };
+		DC0B80AD2D59974200459C7E /* ModeSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSwitchView.swift; sourceTree = "<group>"; };
+		DC0B80AF2D5997F400459C7E /* AnimalSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSelectionView.swift; sourceTree = "<group>"; };
+		DC0B80B12D59A31A00459C7E /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		DCBFC4982D581ECB00C73B73 /* ProcessingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingViewModel.swift; sourceTree = "<group>"; };
 		DCECA9FF2D569EED003F5643 /* PetTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCECAA102D569F8C003F5643 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -57,6 +65,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC0B80AA2D5995F300459C7E /* Compononts */ = {
+			isa = PBXGroup;
+			children = (
+				DC0B80AB2D59965500459C7E /* TranslatorTitleView.swift */,
+				DC0B80AD2D59974200459C7E /* ModeSwitchView.swift */,
+				DC0B80AF2D5997F400459C7E /* AnimalSelectionView.swift */,
+				DC0B80B12D59A31A00459C7E /* SettingsRowView.swift */,
+			);
+			path = Compononts;
+			sourceTree = "<group>";
+		};
 		DCECA9F62D569EED003F5643 = {
 			isa = PBXGroup;
 			children = (
@@ -85,11 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				DCECAA322D56FC56003F5643 /* Extensions */,
-				DCECAA2F2D56E656003F5643 /* font */,
+				DCECAA2F2D56E656003F5643 /* Fonts */,
 				DCECAA2E2D56A958003F5643 /* Info.plist */,
 				DCECAA2A2D56A5B5003F5643 /* Model */,
 				DCECAA1F2D56A140003F5643 /* ViewModel */,
-				DCECAA1A2D56A038003F5643 /* View */,
+				DCECAA1A2D56A038003F5643 /* Views */,
 				DCECAA112D569F8C003F5643 /* Preview Content */,
 				DCECAA122D569F8C003F5643 /* Assets.xcassets */,
 				DCECAA132D569F8C003F5643 /* ContentView.swift */,
@@ -99,16 +118,17 @@
 			path = PetTranslator;
 			sourceTree = "<group>";
 		};
-		DCECAA1A2D56A038003F5643 /* View */ = {
+		DCECAA1A2D56A038003F5643 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC0B80AA2D5995F300459C7E /* Compononts */,
 				DCECAA1D2D56A05E003F5643 /* TranslatorView.swift */,
 				DCECAA242D56A40B003F5643 /* RecordingView.swift */,
 				DCECAA262D56A4B6003F5643 /* ProcessingView.swift */,
 				DCECAA282D56A55E003F5643 /* ResultView.swift */,
 				DC0B80A62D5938FE00459C7E /* SettingsView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DCECAA1F2D56A140003F5643 /* ViewModel */ = {
@@ -129,12 +149,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DCECAA2F2D56E656003F5643 /* font */ = {
+		DCECAA2F2D56E656003F5643 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				DCECAA302D56E728003F5643 /* konkhmer-sleokchher.ttf */,
 			);
-			path = font;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		DCECAA322D56FC56003F5643 /* Extensions */ = {
@@ -220,13 +240,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCECAA182D569F8C003F5643 /* ContentView.swift in Sources */,
+				DC0B80AC2D59965500459C7E /* TranslatorTitleView.swift in Sources */,
 				DCECAA272D56A4B6003F5643 /* ProcessingView.swift in Sources */,
 				DCECAA342D56FC90003F5643 /* Color+Extensions.swift in Sources */,
 				DC0B80A52D591E3000459C7E /* ResultViewModel.swift in Sources */,
 				DCECAA252D56A40B003F5643 /* RecordingView.swift in Sources */,
 				DCECAA1E2D56A05E003F5643 /* TranslatorView.swift in Sources */,
+				DC0B80B02D5997F400459C7E /* AnimalSelectionView.swift in Sources */,
 				DCBFC4992D581ECB00C73B73 /* ProcessingViewModel.swift in Sources */,
+				DC0B80AE2D59974200459C7E /* ModeSwitchView.swift in Sources */,
 				DCECAA212D56A16F003F5643 /* TransletorViewModel.swift in Sources */,
+				DC0B80B22D59A31A00459C7E /* SettingsRowView.swift in Sources */,
 				DCECAA292D56A55E003F5643 /* ResultView.swift in Sources */,
 				DC0B80A72D5938FE00459C7E /* SettingsView.swift in Sources */,
 				DC0B80A92D593ED200459C7E /* CustomTabBar.swift in Sources */,

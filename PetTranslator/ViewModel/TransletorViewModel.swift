@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFoundation
 
-class TranslatorViewModel: ObservableObject {
+final class TranslatorViewModel: ObservableObject {
     @Published var isAnimalMode = false
     @Published var selectedAnimal = "dog"
     @Published var isRecording = false
