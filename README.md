@@ -13,3 +13,10 @@ PetTranslator is a fun and interactive iOS app that lets users “translate” t
  Technologies Used
 	•	SwiftUI for a modern and dynamic UI.
 	•	MVVM Architecture for clean and scalable code.
+
+
+ 
+
+
+https://github.com/user-attachments/assets/3b0603a9-7ab7-4776-9ec8-207ed85c713c
+
