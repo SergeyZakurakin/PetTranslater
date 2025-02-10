@@ -9,9 +9,17 @@ import SwiftUI
 
 struct TranslatorView: View {
     @StateObject var viewModel = TranslatorViewModel()
+    @State private var selectedTab = 0
+    @State private var isSettingsActive: Bool = false
     
     var body: some View {
-            NavigationStack {
+        NavigationStack {
+            ZStack {
+                // Градиентный фон на весь экран
+                GradientBackground()
+                    .ignoresSafeArea()
+                
+                // Основной контент
                 VStack {
                     Text("Translator")
                         .font(.custom("konkhmer-sleokchher", size: 32))
@@ -20,21 +28,19 @@ struct TranslatorView: View {
                         .padding()
                     
                     // Переключатель "Человек / Животное"
-                    
                     HStack(spacing: 30) {
-                        Text("HUMAN")
+                        Text("PET")
                         Image(.arrow)
                             .frame(width: 24, height: 24)
-                        Text("PET")
+                        Text("HUMAN")
                     }
                     .font(.custom("konkhmer-sleokchher", size: 16))
                     .foregroundStyle(.black)
                     .frame(maxWidth: .infinity)
                     
-                    
+                    // Кнопки записи и выбора животного
                     HStack {
                         NavigationLink(destination: RecordingView(viewModel: viewModel)) {
-                            
                             ZStack {
                                 RoundedRectangle(cornerRadius: 16)
                                     .fill(Color.white)
@@ -77,7 +83,7 @@ struct TranslatorView: View {
                     .padding(.top, 58)
                     
                     // Большая иконка выбранного животного
-                    Image(viewModel.selectedAnimal == "dog" ? "dog" : "cat")
+                    Image(viewModel.selectedAnimal == "dog" ? "cat" : "dog")
                         .resizable()
                         .frame(width: 200, height: 200)
                         .padding()
@@ -85,12 +91,28 @@ struct TranslatorView: View {
                     
                     Spacer()
                 }
-                .background(GradientBackground())
+                
+                // Кастомный таббар
+                VStack {
+                    Spacer() // Размещаем таббар внизу
+                    CustomTabBar(selectedTab: $selectedTab, isSettingsActive: $isSettingsActive)
+                        .padding(.horizontal, 40) // Отступы по бокам
+                        .padding(.bottom, 20) // Отступ снизу
+                }
             }
+            .navigationBarHidden(true) // Скрываем навигационную панель
+            .background(
+                           // Скрытый NavigationLink для перехода на SettingsView
+                           NavigationLink(
+                               destination: SettingsView(),
+                               isActive: $isSettingsActive,
+                               label: { EmptyView() }
+                           )
+                       )
+        }
     }
 }
 
 #Preview {
     TranslatorView()
 }
-

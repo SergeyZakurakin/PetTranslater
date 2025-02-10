@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        
         ZStack {
             GradientBackground()
             VStack(spacing: 10) {
@@ -20,12 +19,10 @@ struct SettingsView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .frame(height: 50)
                 }
-                    
                 .foregroundStyle(Color(red: 214/255, green: 220/255, blue: 255/255, opacity: 1))
                 .padding(.horizontal, 30)
                 Spacer()
             }
-            
         }
     }
 }

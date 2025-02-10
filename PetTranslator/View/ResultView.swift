@@ -18,7 +18,6 @@ struct ResultView: View {
             GradientBackground() // Градиентный фон
             
             VStack {
-                // Верхний заголовок с крестиком
                 HStack {
                     // Кнопка закрытия
                     Button(action: {
@@ -80,6 +79,7 @@ struct ResultView: View {
             .padding(.top, 20) // Дополнительный отступ вверх
         }
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.generateRandomPhrase(for: selectedAnimal)
             print("ResultView: \(viewModel.randomPhrase)")
