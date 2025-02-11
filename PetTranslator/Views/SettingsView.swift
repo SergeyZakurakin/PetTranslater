@@ -19,6 +19,7 @@ struct SettingsView: View {
             GradientBackground()
             VStack(spacing: 10) {
                 Text("Settings")
+                    .foregroundStyle(.black)
                     .font(.system(size: 30, weight: .bold, design: .default))
                 Spacer()
                 ForEach(settingsOptions, id: \.self) { option in
