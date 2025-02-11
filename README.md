@@ -16,9 +16,10 @@ PetTranslator is a fun and interactive iOS app that lets users “translate” t
 
 
  
-<img width="200" alt="Request" src="https://github.com/user-attachments/assets/45cb1dd8-3ab6-445e-b3f5-6fe81304b294" />
-<img width="200" alt="Main" src="https://github.com/user-attachments/assets/e4aa7d48-f162-4d51-9de2-5dbe2bb09184" />
-<img width="200" alt="Processing" src="https://github.com/user-attachments/assets/214b0b91-1e84-431c-aa3c-eeef1ae5187f" />
-<img width="200" alt="Result" src="https://github.com/user-attachments/assets/3e11a6a4-1336-4cd7-85b6-94b2fdfdb021" />
-<img width="200" alt="Settings" src="https://github.com/user-attachments/assets/75513de9-6307-4071-9006-e7e71306c8f6" />
+
+<img width="150" alt="Main" src="https://github.com/user-attachments/assets/e4aa7d48-f162-4d51-9de2-5dbe2bb09184" />
+<img width="150" alt="Request" src="https://github.com/user-attachments/assets/45cb1dd8-3ab6-445e-b3f5-6fe81304b294" />
+<img width="150" alt="Processing" src="https://github.com/user-attachments/assets/214b0b91-1e84-431c-aa3c-eeef1ae5187f" />
+<img width="150" alt="Result" src="https://github.com/user-attachments/assets/3e11a6a4-1336-4cd7-85b6-94b2fdfdb021" />
+<img width="150" alt="Settings" src="https://github.com/user-attachments/assets/75513de9-6307-4071-9006-e7e71306c8f6" />
 
