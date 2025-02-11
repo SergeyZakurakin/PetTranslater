@@ -8,6 +8,12 @@
 import SwiftUI
 
 final class ResultViewModel: ObservableObject {
+    let text: String
+    
+    init(text: String) {
+        self.text = text
+    }
+    
     @Published var randomPhrase: String = ""
     
     private let dogPhrases = [
@@ -26,13 +32,7 @@ final class ResultViewModel: ObservableObject {
         "Pet me… but only for 5 seconds."
     ]
     
-    func generateRandomPhrase(for animal: String) {
-        if animal == "dog" {
-            randomPhrase = dogPhrases.randomElement() ?? "Woof!"
-        } else if animal == "cat" {
-            randomPhrase = catPhrases.randomElement() ?? "Meow!"
-        } else {
-            randomPhrase = "I have no idea what you're saying!"
-        }
-    }
+//    func generateRandomPhrase(for animal: Animal) async throws -> String {
+//        try await translator.translate(audio: Data(), animal: animal)
+//    }
 }

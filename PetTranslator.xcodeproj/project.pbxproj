@@ -14,6 +14,8 @@
 		DC0B80AE2D59974200459C7E /* ModeSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80AD2D59974200459C7E /* ModeSwitchView.swift */; };
 		DC0B80B02D5997F400459C7E /* AnimalSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80AF2D5997F400459C7E /* AnimalSelectionView.swift */; };
 		DC0B80B22D59A31A00459C7E /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80B12D59A31A00459C7E /* SettingsRowView.swift */; };
+		DC0B80B42D5A9AEB00459C7E /* TranslatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80B32D5A9AEB00459C7E /* TranslatorProtocol.swift */; };
+		DC0B80B62D5AABAD00459C7E /* TranslatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0B80B52D5AABAD00459C7E /* TranslatingView.swift */; };
 		DCBFC4992D581ECB00C73B73 /* ProcessingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBFC4982D581ECB00C73B73 /* ProcessingViewModel.swift */; };
 		DCECAA162D569F8C003F5643 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCECAA102D569F8C003F5643 /* Preview Assets.xcassets */; };
 		DCECAA172D569F8C003F5643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCECAA122D569F8C003F5643 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		DC0B80AD2D59974200459C7E /* ModeSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSwitchView.swift; sourceTree = "<group>"; };
 		DC0B80AF2D5997F400459C7E /* AnimalSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSelectionView.swift; sourceTree = "<group>"; };
 		DC0B80B12D59A31A00459C7E /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		DC0B80B32D5A9AEB00459C7E /* TranslatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorProtocol.swift; sourceTree = "<group>"; };
+		DC0B80B52D5AABAD00459C7E /* TranslatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatingView.swift; sourceTree = "<group>"; };
 		DCBFC4982D581ECB00C73B73 /* ProcessingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingViewModel.swift; sourceTree = "<group>"; };
 		DCECA9FF2D569EED003F5643 /* PetTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCECAA102D569F8C003F5643 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				DCECAA132D569F8C003F5643 /* ContentView.swift */,
 				DCECAA142D569F8C003F5643 /* PetTranslatorApp.swift */,
 				DC0B80A82D593ED200459C7E /* CustomTabBar.swift */,
+				DC0B80B32D5A9AEB00459C7E /* TranslatorProtocol.swift */,
 			);
 			path = PetTranslator;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				DCECAA242D56A40B003F5643 /* RecordingView.swift */,
 				DCECAA262D56A4B6003F5643 /* ProcessingView.swift */,
 				DCECAA282D56A55E003F5643 /* ResultView.swift */,
+				DC0B80B52D5AABAD00459C7E /* TranslatingView.swift */,
 				DC0B80A62D5938FE00459C7E /* SettingsView.swift */,
 			);
 			path = Views;
@@ -239,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC0B80B62D5AABAD00459C7E /* TranslatingView.swift in Sources */,
 				DCECAA182D569F8C003F5643 /* ContentView.swift in Sources */,
 				DC0B80AC2D59965500459C7E /* TranslatorTitleView.swift in Sources */,
 				DCECAA272D56A4B6003F5643 /* ProcessingView.swift in Sources */,
@@ -252,6 +259,7 @@
 				DCECAA212D56A16F003F5643 /* TransletorViewModel.swift in Sources */,
 				DC0B80B22D59A31A00459C7E /* SettingsRowView.swift in Sources */,
 				DCECAA292D56A55E003F5643 /* ResultView.swift in Sources */,
+				DC0B80B42D5A9AEB00459C7E /* TranslatorProtocol.swift in Sources */,
 				DC0B80A72D5938FE00459C7E /* SettingsView.swift in Sources */,
 				DC0B80A92D593ED200459C7E /* CustomTabBar.swift in Sources */,
 				DCECAA2C2D56A5E9003F5643 /* AudioRecorder.swift in Sources */,

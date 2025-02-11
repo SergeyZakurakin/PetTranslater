@@ -18,7 +18,7 @@ struct ResultView: View {
     @ObservedObject var viewModel: ResultViewModel
     @Environment(\.dismiss) var dismiss // Для закрытия экрана
     
-    var selectedAnimal: String
+    var selectedAnimal: Animal
 
     var body: some View {
         ZStack {
@@ -63,7 +63,7 @@ struct ResultView: View {
                     Image(.polygon)
                         .offset(x: 100, y: 120)
                     
-                    Text(viewModel.randomPhrase)
+                    Text(viewModel.text)
                         .font(.headline)
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
@@ -75,7 +75,7 @@ struct ResultView: View {
                 Spacer(minLength: 20) // Регулируемый отступ вниз
                 
                 // Иконка животного
-                Image(selectedAnimal == "dog" ? "dog" : "cat")
+                Image(selectedAnimal == .dog ? .dog : .cat)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 184, height: 184)
@@ -88,8 +88,14 @@ struct ResultView: View {
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
         .onAppear {
-            viewModel.generateRandomPhrase(for: selectedAnimal)
-            print("ResultView: \(viewModel.randomPhrase)")
+//            Task {
+//                do {
+//                    let result = try await viewModel.generateRandomPhrase(for: selectedAnimal)
+//                    print("ResultView: \(result)")
+//                } catch {
+//                    print(error.localizedDescription)
+//                }
+//            }
         }
     }
     
@@ -101,6 +107,6 @@ struct ResultView: View {
     }
 }
 
-#Preview {
-    ResultView(viewModel: ResultViewModel(), selectedAnimal: "dog")
-}
+//#Preview {
+//    ResultView(viewModel: ResultViewModel(translator: SimpleTranslator()), selectedAnimal: .cat)
+//}

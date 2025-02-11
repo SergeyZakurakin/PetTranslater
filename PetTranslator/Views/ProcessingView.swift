@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProcessingView: View {
     @ObservedObject var viewModel: ProcessingViewModel
-    @State private var selectedAnimal: String = "dog"
+    @State private var selectedAnimal = Animal.cat
     @State private var selectedTab: Int = 0
     @State private var shouldNavigateToResult = false
     @State private var isSettingsActive: Bool = false
@@ -99,9 +99,12 @@ struct ProcessingView: View {
             }
             .navigationBarHidden(true)
             .background(
+                // !!!!!!!!!! Recorded audio URL
                 // Скрытый NavigationLink для автоматического перехода
                 NavigationLink(
-                    destination: ResultView(viewModel: ResultViewModel(), selectedAnimal: selectedAnimal),
+                    destination:
+//                        ResultView(viewModel: ResultViewModel(audioURL: viewModel.recordedAudioURL!), selectedAnimal: selectedAnimal),
+                    TranslatingView(viewModel: .init(audioURL: viewModel.recordedAudioURL ?? .desktopDirectory, animal: selectedAnimal)),
                     isActive: $shouldNavigateToResult,
                     label: { EmptyView() }
                 )
