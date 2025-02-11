@@ -8,31 +8,6 @@
 
 import SwiftUI
 
-final class TranslatingViewModel: ObservableObject {
-    let audioURL: URL
-    let animal: Animal
-    let translator: TranslatorProtocol
-    @Published var text: String = ""
-    
-    init(audioURL: URL, animal: Animal, translator: TranslatorProtocol = SimpleTranslator()) {
-        self.audioURL = audioURL
-        self.animal = animal
-        self.translator = translator
-    }
-    
-    func translateAudio() async throws {
-        let data = try? Data(contentsOf: audioURL)
-        let result = try await translator.translate(audio: data ?? Data(), animal: animal)
-        sleep(2)
-        await updateText(result)
-    }
-    
-    @MainActor
-    func updateText(_ text: String) {
-        self.text = text
-    }
-}
-
 struct TranslatingView: View {
     @StateObject var viewModel: TranslatingViewModel
     @State private var shouldNavigateToResult = false
@@ -42,8 +17,8 @@ struct TranslatingView: View {
             ZStack {
                 GradientBackground()
                     .ignoresSafeArea()
-                
                 VStack {
+                    Spacer()
                     if viewModel.text.isEmpty {
                         Text("Translating audio...")
                             .font(.title)
@@ -56,13 +31,14 @@ struct TranslatingView: View {
                             .multilineTextAlignment(.center)
                             .padding()
                     }
-                    
+                    Spacer()
+                    Spacer()
                     viewModel.animal.image
                         .resizable()
                         .frame(width: 200, height: 200)
                         .padding(.top, 51)
-                    
                     Spacer()
+                    
                 }
             }
             .task {
