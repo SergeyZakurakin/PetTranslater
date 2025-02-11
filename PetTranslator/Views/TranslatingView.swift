@@ -5,12 +5,6 @@
 //  Created by Sergey Zakurakin on 2/10/25.
 //
 
-//
-//  TranslatingView.swift
-//  PetTranslator
-//
-//  Created by Sergey Zakurakin on 2/10/25.
-//
 
 import SwiftUI
 

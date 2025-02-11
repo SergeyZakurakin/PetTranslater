@@ -5,14 +5,6 @@
 //  Created by Sergey Zakurakin on 2/7/25.
 //
 
-// ProcessingView.swift
-//
-//  ProcessingView.swift
-//  PetTranslator
-//
-//  Created by Sergey Zakurakin on 2/7/25.
-//
-
 import SwiftUI
 
 struct ProcessingView: View {
