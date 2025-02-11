@@ -23,9 +23,10 @@ struct TranslatorView: View {
                     TranslatorTitleView()
                     ModeSwitchView()
                     
-                    // Кнопки записи и выбора животного
+                    // Кнопки записи и выбора животного в одном ряду
                     HStack {
-                        // Кнопка для записи, передаем viewModel как параметр
+                        // Кнопка для записи
+                        
                         NavigationLink(destination: RecordingView(viewModel: viewModel)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 16)
@@ -43,16 +44,12 @@ struct TranslatorView: View {
                                 }
                             }
                         }
-                        
-                        // Передаем привязку selectedAnimal в AnimalSelectionView
+                        // Маленькие иконки выбора животного
                         AnimalSelectionView(selectedAnimal: $viewModel.selectedAnimal)
-                            .padding(.top, 58)
-                        
-                        // Иконка выбранного животного
-                        AnimalIconView(animal: viewModel.selectedAnimal)
-                        
-                        Spacer()
                     }
+                    .padding(.top, 58)
+                    // Иконка выбранного животного
+                    AnimalIconView(animal: viewModel.selectedAnimal)
                     
                     // Кастомный таббар
                     VStack {
