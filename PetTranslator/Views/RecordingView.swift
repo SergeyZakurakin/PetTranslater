@@ -5,8 +5,6 @@
 //  Created by Sergey Zakurakin on 2/7/25.
 //
 
-// RecordingView.swift
-// RecordingView.swift
 import SwiftUI
 
 struct RecordingView: View {
