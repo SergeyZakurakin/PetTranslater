@@ -36,11 +36,11 @@ final class TranslatorViewModel: ObservableObject {
         isRecording = recorder.isRecording
     }
     
-    func processTranslation() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.translatedText = self.isAnimalMode ? "Woof woof! (I'm hungry)" : "Hello! Feed me!"
-        }
-    }
+//    func processTranslation() {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            self.translatedText = self.isAnimalMode ? "Woof woof! (I'm hungry)" : "Hello! Feed me!"
+//        }
+//    }
     
     // Новый метод для запроса доступа к микрофону
     func requestMicrophoneAccess(completion: @escaping (Bool) -> Void) {

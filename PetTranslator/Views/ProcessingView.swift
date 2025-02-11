@@ -104,7 +104,7 @@ struct ProcessingView: View {
                 NavigationLink(
                     destination:
 //                        ResultView(viewModel: ResultViewModel(audioURL: viewModel.recordedAudioURL!), selectedAnimal: selectedAnimal),
-                    TranslatingView(viewModel: .init(audioURL: viewModel.recordedAudioURL ?? .desktopDirectory, animal: selectedAnimal)),
+                    TranslatingView(viewModel: .init(audioURL: viewModel.recordedAudioURL ?? .desktopDirectory)),
                     isActive: $shouldNavigateToResult,
                     label: { EmptyView() }
                 )

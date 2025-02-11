@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TranslatorView: View {
+    @EnvironmentObject var animalViewModel: AnimalSelectionViewModel
     @StateObject var viewModel = TranslatorViewModel()
     @State private var selectedTab = 0
     @State private var isSettingsActive: Bool = false

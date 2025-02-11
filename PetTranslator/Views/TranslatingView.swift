@@ -35,7 +35,7 @@ final class TranslatingViewModel: ObservableObject {
 
 
 struct TranslatingView: View {
-    @ObservedObject var viewModel: TranslatingViewModel
+    @StateObject var viewModel: TranslatingViewModel
     @State private var shouldNavigateToResult = false
     
     var body: some View {
@@ -53,15 +53,14 @@ struct TranslatingView: View {
                     .padding(.top, 51)
             }
         }
-            .onAppear  {
-                Task {
+        .task {
                     do {
                         try await viewModel.traslateAudio()
                         shouldNavigateToResult = true
                     } catch {
                         print("Error: \(error)")
                     }
-                }
+                
             }
             .background(
                 NavigationLink("",

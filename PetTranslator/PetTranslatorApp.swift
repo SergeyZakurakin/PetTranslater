@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct PetTranslatorApp: App {
+    @StateObject var animalViewModel = AnimalSelectionViewModel()
+    
     var body: some Scene {
         WindowGroup {
             TranslatorView()
+                .environmentObject(animalViewModel) // Передаем в среду
         }
     }
 }
