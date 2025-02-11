@@ -5,6 +5,8 @@
 //  Created by Sergey Zakurakin on 2/7/25.
 //
 
+// RecordingView.swift
+// RecordingView.swift
 import SwiftUI
 
 struct RecordingView: View {
@@ -13,29 +15,30 @@ struct RecordingView: View {
     
     var body: some View {
         NavigationStack {
-                   ZStack {
-                       Image("recordingScreen")
-                           .resizable()
-                           .scaledToFill()
-                           .ignoresSafeArea()
-                   }
-                   .onAppear {
-                       checkMicrophoneAccess()
-                   }
-                   .navigationDestination(isPresented: $viewModel.shouldNavigateToProcessing) {
-                       ProcessingView(viewModel: ProcessingViewModel())
-                   }
-               }
-           }
+            ZStack {
+                Image("recordingScreen")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea()
+            }
+            .onAppear {
+                checkMicrophoneAccess()
+            }
+            .navigationDestination(isPresented: $viewModel.shouldNavigateToProcessing) {
+                // Передаем selectedAnimal как Binding<Animal>
+                ProcessingView(viewModel: ProcessingViewModel(), selectedAnimal: $viewModel.selectedAnimal)
+            }
+        }
+    }
     
     private func checkMicrophoneAccess() {
         viewModel.requestMicrophoneAccess { granted in
             DispatchQueue.main.async {
                 if granted {
                     viewModel.isRecording = true
-                    viewModel.shouldNavigateToProcessing = true // Перейти дальше
+                    viewModel.shouldNavigateToProcessing = true
                 } else {
-                    dismiss() // Закрыть экран, если отказ
+                    dismiss() // Закрыть экран, если доступ отклонен
                 }
             }
         }
@@ -45,4 +48,3 @@ struct RecordingView: View {
 #Preview {
     RecordingView(viewModel: TranslatorViewModel())
 }
-

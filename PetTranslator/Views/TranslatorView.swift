@@ -5,10 +5,10 @@
 //  Created by Sergey Zakurakin on 2/7/25.
 //
 
+// TranslatorView.swift
 import SwiftUI
 
 struct TranslatorView: View {
-    @EnvironmentObject var animalViewModel: AnimalSelectionViewModel
     @StateObject var viewModel = TranslatorViewModel()
     @State private var selectedTab = 0
     @State private var isSettingsActive: Bool = false
@@ -16,17 +16,17 @@ struct TranslatorView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // Градиентный фон на весь экран
                 GradientBackground()
                     .ignoresSafeArea()
                 
-                // Основной контент
                 VStack {
                     TranslatorTitleView()
                     ModeSwitchView()
                     
-                    // Кнопки записи и выбора животного
+                    // Кнопки записи и выбора животного в одном ряду
                     HStack {
+                        // Кнопка для записи
+                        
                         NavigationLink(destination: RecordingView(viewModel: viewModel)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 16)
@@ -44,40 +44,31 @@ struct TranslatorView: View {
                                 }
                             }
                         }
-                        
-                        ZStack {
-                            AnimalSelectionView(selectedAnimal: $viewModel.selectedAnimal)
-                        }
+                        // Маленькие иконки выбора животного
+                        AnimalSelectionView(selectedAnimal: $viewModel.selectedAnimal)
                     }
                     .padding(.top, 58)
+                    // Иконка выбранного животного
+                    AnimalIconView(animal: viewModel.selectedAnimal)
                     
-                    // Большая иконка выбранного животного
-                    Image(viewModel.selectedAnimal == "dog" ? "cat" : "dog")
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                        .padding()
-                        .padding(.top, 51)
-                    
-                    Spacer()
+                    // Кастомный таббар
+                    VStack {
+                        Spacer()
+                        CustomTabBar(selectedTab: $selectedTab, isSettingsActive: $isSettingsActive)
+                            .padding(.horizontal, 40)
+                            .padding(.bottom, 20)
+                    }
                 }
-                
-                // Кастомный таббар
-                VStack {
-                    Spacer() // Размещаем таббар внизу
-                    CustomTabBar(selectedTab: $selectedTab, isSettingsActive: $isSettingsActive)
-                        .padding(.horizontal, 40) // Отступы по бокам
-                        .padding(.bottom, 20) // Отступ снизу
-                }
-            }
-            .navigationBarHidden(true) // Скрываем навигационную панель
-            .background(
-                // Скрытый NavigationLink для перехода на SettingsView
-                NavigationLink(
-                    destination: SettingsView(),
-                    isActive: $isSettingsActive,
-                    label: { EmptyView() }
+                .navigationBarHidden(true)
+                .background(
+                    // Скрытый NavigationLink для перехода на SettingsView
+                    NavigationLink(
+                        destination: SettingsView(),
+                        isActive: $isSettingsActive,
+                        label: { EmptyView() }
+                    )
                 )
-            )
+            }
         }
     }
 }

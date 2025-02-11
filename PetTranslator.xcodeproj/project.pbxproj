@@ -132,8 +132,8 @@
 				DCECAA1D2D56A05E003F5643 /* TranslatorView.swift */,
 				DCECAA242D56A40B003F5643 /* RecordingView.swift */,
 				DCECAA262D56A4B6003F5643 /* ProcessingView.swift */,
-				DCECAA282D56A55E003F5643 /* ResultView.swift */,
 				DC0B80B52D5AABAD00459C7E /* TranslatingView.swift */,
+				DCECAA282D56A55E003F5643 /* ResultView.swift */,
 				DC0B80A62D5938FE00459C7E /* SettingsView.swift */,
 			);
 			path = Views;
