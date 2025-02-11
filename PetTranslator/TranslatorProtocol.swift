@@ -5,8 +5,9 @@
 //  Created by Sergey Zakurakin on 2/10/25.
 //
 
+
 import Foundation
-import SwiftUICore
+import SwiftUI
 
 public enum Animal: String {
     case dog
@@ -15,20 +16,10 @@ public enum Animal: String {
     var image: Image {
         Image(self.rawValue)
     }
-    
-    /// TODO
-    var iconImage200PaddingTop51: any View {
-        Image(self.rawValue)
-            .resizable()
-            .frame(width: 200, height: 200)
-            .padding()
-            .padding(.top, 51)
-    }
 }
 
 public protocol TranslatorProtocol {
     func translate(audio: Data, animal: Animal) async throws -> String
-    
 }
 
 class SimpleTranslator: TranslatorProtocol {
@@ -52,21 +43,31 @@ class SimpleTranslator: TranslatorProtocol {
             "Pet me… but only for 5 seconds."
         ]
         self.dictionary = [
-            .dog : dogPhrases,
-            .cat : catPhrases,
-            ]
+            .dog: dogPhrases,
+            .cat: catPhrases
+        ]
     }
     
     func translate(audio: Data, animal: Animal) async throws -> String {
-        let reult = dictionary[animal, default: []].randomElement() ?? ""
-        return reult
+        let result = dictionary[animal, default: []].randomElement() ?? "I don't understand..."
+        return result
     }
 }
 
 class AnimalTranslator: TranslatorProtocol {
     func translate(audio: Data, animal: Animal) async throws -> String {
-        return "\(animal)"
+        return "Translating for \(animal.rawValue.capitalized)..."
     }
+}
+
+struct AnimalIconView: View {
+    let animal: Animal
     
-    
+    var body: some View {
+        Image(animal.rawValue)
+            .resizable()
+            .frame(width: 200, height: 200)
+            .padding()
+            .padding(.top, 51)
+    }
 }

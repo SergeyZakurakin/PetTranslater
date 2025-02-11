@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-import AVFoundation
+import AVFAudio
 
 final class TranslatorViewModel: ObservableObject {
     @Published var isAnimalMode = false
-    @Published var selectedAnimal = "dog"
+    @Published var selectedAnimal: Animal = .dog
     @Published var isRecording = false
     @Published var translatedText = ""
     @Published var isMicrophoneGranted = false
@@ -22,7 +22,7 @@ final class TranslatorViewModel: ObservableObject {
         isAnimalMode.toggle()
     }
     
-    func selectAnimal(_ animal: String) {
+    func selectAnimal(_ animal: Animal) {
         selectedAnimal = animal
     }
     
@@ -35,14 +35,7 @@ final class TranslatorViewModel: ObservableObject {
         recorder.stopRecording()
         isRecording = recorder.isRecording
     }
-    
-//    func processTranslation() {
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            self.translatedText = self.isAnimalMode ? "Woof woof! (I'm hungry)" : "Hello! Feed me!"
-//        }
-//    }
-    
-    // Новый метод для запроса доступа к микрофону
+
     func requestMicrophoneAccess(completion: @escaping (Bool) -> Void) {
         AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
             DispatchQueue.main.async {
@@ -51,8 +44,8 @@ final class TranslatorViewModel: ObservableObject {
                 completion(granted)
             }
         }
-    
     }
+
     func navigateToProcessingView() {
         shouldNavigateToProcessing = true
     }
